@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+	<script>
+		// document is fully loaded
+		window.onload = function() {
+			// document find all tag li
+			var li = document.getElementsByTagName('li');
+			for(var i = 0, len = li.length; i < len; i++){
+				// li add css style
+				li[i].style.border = '1px solid #000';
+				li[i].style.listStyleType = 'none';
+
+				// Attach a onmouseover event handler to the <li> element
+				li[i].onmouseover = function(){
+					this.style.backgroundColor = 'blue';
+					this.style.color = 'white';
+				};
+
+                // Attach a mouseout event handler to the <li> element
+				li[i].onmouseout = function(){
+					this.style.backgroundColor = 'white';
+					this.style.color = 'black'; 
+				}
+			}
+			
+			// document find id everywhere
+			var every = document.getElementById('everywhere');
+
+			// document remove tag every
+			every.parentNode.removeChild(every);
+		}
+	</script>
+</head>
+<body>
+	<h1>Introduction to the DOM</h1>
+	<p class="test">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, perspiciatis?
+	</p>
+	<ul>
+		<li id="everywhere">everywhere text</li>
+		<li class="test">text ...... 1</li>
+		<li class="test">text ...... 2</li>
+		<li class="test">text ...... 3</li>
+		<li class="test">text ...... 4</li>
+	</ul>
+</body>
+</html>
