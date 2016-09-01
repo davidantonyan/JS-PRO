@@ -104,9 +104,9 @@ list.append("Jennifer");
 list.append("Bryan");
 list.append("Danny");
 
-for (list.front(); list.currPos() < list.length(); list.next()) {
-	console.log(list.currPos());
-}
+// for (list.front(); list.currPos() < list.length(); list.next()) {
+// 	console.log(list.currPos());
+// }
 
 list.end();
 

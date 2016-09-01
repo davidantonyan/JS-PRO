@@ -18,9 +18,9 @@
 			var list = new List();
 			var muzTop = TopGenres.split(';');
 
-			for (var i = 0, len = muzTop.length; i < len; ++i){
-				list.append(muzTop[i]);
-			}
+			// for (var i = 0, len = muzTop.length; i < len; ++i){
+			// 	list.append(muzTop[i]);
+			// }
 
 			// console.log(list.insert('jazzpop','pop'));
 
@@ -77,14 +77,13 @@
 			// 	console.log(list.getElement());
 			// }
 
-			for(list.end(); list.currPos() >= 0; list.prev()) {
-				console.log(list.getElement());
-			}
-
-
+			// for(list.end(); list.currPos() >= 0; list.prev()) {
+			// 	console.log(list.getElement());
+			// }
 		})();
 
 		console.timeEnd('end script');
 	</script>
 </body>
 </html>
+
