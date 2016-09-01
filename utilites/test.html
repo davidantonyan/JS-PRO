@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test List</title>
+</head>
+<body>
+	<h1>test list.js</h1>
+	<script>
+		var TopGenres = "rock;electronic;pop;indie;punk;hardcore;female vocalists;hip-hop;ambient;metal;alternative;experimental;jazz;folk;dance;rap;progressive rock;japanese;trance;death metal;black metal;house;heavy metal;hard rock;psychedelic;drum and bass;techno;singer-songwriter;electronica;hip hop;thrash metal;instrumental;punk rock;german;indie rock;soul;funk;80s;chillout;french;alternative rock;swedish;industrial;reggae;electro;polish;blues;british;soundtrack;finnish;hardcore punk;acoustic;progressive metal;psytrance;indie pop;power metal;noise;post-rock;classical;downtempo;j-pop;rnb;post-punk;minimal;doom metal;ska;dubstep;metalcore;psychedelic rock;classic rock;new wave;canadian;russian;lounge;idm;grindcore;country;synthpop;melodic death metal;dark ambient;christian;emo;italian;disco;60s;australian;post-hardcore;garage rock;dub;90s;dnb;world;drum n bass;progressive;progressive trance;trip-hop;american;guitar;piano;spanish;j-rock;ebm;stoner rock;brutal death metal;korean;70s;pop punk;avant-garde;latin;male vocalists;dutch;underground hip-hop;gothic;screamo;norwegian;shoegaze;rockabilly;gothic metal;brazilian;sludge;speed metal;oldies;eurodance;celtic;seen live;new age;drone;comedy;goa;crust;jungle;jpop;garage;fusion;rac;nu metal;visual kei;minimal techno;power pop;lo-fi;oi;melodic hardcore;female vocalist;nwobhm;czech;anime;psychedelic trance;deep house;deathcore;k-pop;neurofunk;deutsch;breakbeat;video game music;technical death metal;straight edge;belgian;happy hardcore;darkwave;psychobilly;composer;italo disco;gothic rock;acid jazz;contemporary classical;depressive black metal;danish;krautrock;americana;pop rock;progressive house;easy listening;glam rock;alt-country;blues rock;eurobeat;rock and roll;breakcore;industrial metal;female fronted metal;irish;surf;dancehall;noise rock;hungarian;rapcore;brasil;hiphop;folk rock;aor;lesser known yet streamable artists;ethereal;home collection;new zealand;stoner;gospel;grunge;chiptune;space rock;world music;math rock;glitch;folk metal;tech house;usa;gabber;melodic metal;uk;rhythm and blues;turkish;alternative metal;britpop;chinese;grime;african;mathcore;dream pop;old school death metal;post rock;ska punk;crossover;hardstyle;doom;twee;street punk;symphonic metal;thrash;breaks;free jazz;8-bit;bass;eurovision;acid;swing;belgium;christian rock;post-metal;club;neofolk;smooth jazz;electropop;melodic rock;chanson francaise;dark electro;vocal trance;need to rate;southern rock;scottish;symphonic black metal;doo wop;spoken word;uplifting trance;hair metal;romanian;saxophone;liquid funk;jrock;detroit;political;rave;baroque;germany;progressive death metal;medieval;slovak;funky;northern soul;atmospheric black metal;gangsta rap;mod;argentina;soft rock;greek;swiss;underground rap;melodic black metal;vocal;touhou;rock n roll;industrial rock;brazil;mpb;raw black metal;uk hardcore;goth;bluegrass;portuguese;detroit techno;nu jazz;50s;anarcho-punk;funny;suicidal black metal;kpop;old school;deutschrap;female;emocore;nsbm;darkpsy;hard trance;worship;chill;latvian;mellow;viking metal;indian;schlager;estonian;00s;old school hardcore;garage punk;chanson;atmospheric;rocksteady;pagan metal;futurepop;composers;awesome;italo;chicago;opera;stoner metal;bulgarian;synth pop;powerviolence;jamendo;neoclassical;ukrainian;musical;reggaeton;early music;freestyle;jazz piano;goregrind;youth crew;art rock;nederlandstalig;jazz rock;electro house;new york;contemporary jazz;france;11;female vocals;atmospheric drum and bass;roots reggae;drumfunk;doujin ongaku;lithuanian;croatian;flamenco;underground;jazz fusion;goa trance;minimal synth;traditional;no wave;portugal;surf rock;italian progressive rock;russian rock;sweden;africa;mexico;nu-metal;r&b;bossa nova;math metal;japan;post punk;roots;melodic hard rock;psychill;chile;speedcore;french rap;guitar virtuoso;skinhead reggae;thrashcore;rhythmic noise;game music;power electronics;death doom metal;berlin;traditional doom metal;instrumental hip-hop;skinhead;chaotic hardcore;deathrock;hardcore techno;austrian;indonesian;trumpet;salsa;glam metal;pop-rock;ethnic;arabic;nu-jazz;melodic trance;english;creative commons;game;martial industrial;avant-garde metal;contemporary christian;podcast;coldwave;usbm;female vocal;christian metal;djent;classic;rap francais;symphonic prog;aussie;drjazzmrfunkmusic;samba;grind;nyhc;groove metal;opm;humor;horror punk;spain;electroclash;progressive psytrance;poetry;deutschpunk;skate punk;neo-soul;acid house;indie folk;icelandic;violin;humour;finnish metal;mashup;renaissance;ragga;melodic;cabaret;sexy;pop-punk;techstep;c-pop;funeral doom;music;ska-punk;love;remix;8bit;sludge metal;blackened death metal;south african;powerpop;jamaica;demoscene;indonesia;underground hip hop;norwegian black metal;power violence;jazz vocal;drums;canada;indiepop;netlabel;fun;indietronica;ballad;tango;old school thrash metal;vocal jazz;post-grunge;filipino;melodic punk;girl groups;texas;gypsy;cool;dj;oc remix;jazz hop;post hardcore;jam;big band;persian;avantgarde;broadway;industrial hardcore;folk punk;taiwan;death-doom metal;d-beat;israeli;doujin;orchestral;afrobeat;full-on";
+	</script>
+	<script src="list.js"></script>
+	<script>
+		console.time('start script');
+
+		(()=>{
+
+			var list = new List();
+			var muzTop = TopGenres.split(';');
+
+			for (var i = 0, len = muzTop.length; i < len; ++i){
+				list.append(muzTop[i]);
+			}
+
+			// console.log(list.insert('jazzpop','pop'));
+
+			// console.log(list);
+
+			// console.log(list.contains('post hardcore'));
+
+			// // list.clear();
+
+			// list.append('David');
+			// list.append('Arsen');
+			// list.append('Laura');
+
+			// list.front();
+			// console.log(list.getElement());
+
+			// list.next();
+			// console.log(list.getElement());
+			// list.next();
+			// console.log(list.getElement());
+			// list.next();
+			// console.log(list.getElement());
+			// list.prev();
+			// console.log(list.getElement());
+			// list.prev();
+			// console.log(list.getElement());
+			// list.next();
+
+			// console.log(list.getElement());
+
+			// console.log(list.find('post hardcore'));
+			
+			// console.log(list.toString());
+
+			list.append("Clayton");
+			list.append("Raymond");
+			list.append("Cynthia");
+			list.append("Jennifer");
+			list.append("Bryan");
+			list.append("Danny");
+
+			// console.log(list.length());
+			// list.front();
+
+			// var i = 0;
+
+			// while(i < list.length()) {
+			// 	console.log(list.currPos());
+			// 	list.next();
+			// 	++i;
+			// }
+
+			// for (list.front(); list.currPos() < list.length(); list.next()) {
+			// 	console.log(list.getElement());
+			// }
+
+			for(list.end(); list.currPos() >= 0; list.prev()) {
+				console.log(list.getElement());
+			}
+
+
+		})();
+
+		console.timeEnd('end script');
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Game</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- <canvas id="game-canvas" width="800" height="480"></canvas> -->
+	<!-- <script src="assets/js/app.js"></script> -->
+	<script>
+		class Px {
+			another() {
+				console.log('Px:another');
+			}
+		}
+
+		class Cx extends Px{
+			something() {
+				console.log('Cx:something');
+			}
+
+			another() {
+				this.something();
+				super.another();
+			}
+		}
+
+		var x = new Cx();
+
+		x.another();
+		
+	</script>
+</body>
+</html>
