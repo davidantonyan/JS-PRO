@@ -46,5 +46,20 @@
 		<li class="test">text ...... 3</li>
 		<li class="test">text ...... 4</li>
 	</ul>
+	<script>
+		var add_handlers_better = function(nodes){
+			var i;
+			
+			for(i = 0; i < nodes.length; i++){
+				nodes[i].onclick = function(i){
+					return function(e){
+						console.log(e.type,i);
+					};
+				}(i);
+			}
+		}
+
+		add_handlers_better(document.getElementsByClassName('test'));
+	</script>
 </body>
 </html>

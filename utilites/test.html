@@ -14,13 +14,12 @@
 		console.time('start script');
 
 		(()=>{
-
 			var list = new List();
 			var muzTop = TopGenres.split(';');
 
-			// for (var i = 0, len = muzTop.length; i < len; ++i){
-			// 	list.append(muzTop[i]);
-			// }
+			for (var i = 0, len = muzTop.length; i < len; ++i){
+				list.append(muzTop[i]);
+			}
 
 			// console.log(list.insert('jazzpop','pop'));
 
@@ -28,7 +27,7 @@
 
 			// console.log(list.contains('post hardcore'));
 
-			// // list.clear();
+			// list.clear();
 
 			// list.append('David');
 			// list.append('Arsen');
@@ -54,13 +53,6 @@
 			// console.log(list.find('post hardcore'));
 			
 			// console.log(list.toString());
-
-			list.append("Clayton");
-			list.append("Raymond");
-			list.append("Cynthia");
-			list.append("Jennifer");
-			list.append("Bryan");
-			list.append("Danny");
 
 			// console.log(list.length());
 			// list.front();
