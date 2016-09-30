@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Video</title>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+		var camera = (function() {
+
+			// private vars
+			var options, video, canvas, context, timer;
+
+ 			function initVideoStream(){
+ 				video = document.createElement('video');
+ 				video.setAttribute('width', options.width);
+ 				video.setAttribute('height', options.height);
+
+ 				navigator.getUserMedia = navigator.getUserMedia || 
+						 				 navigator.webkitGetUserMedia || 
+						 				 navigator.mozGetUserMedia || 
+						 				 navigator.msGetUserMedia;
+
+				window.URL = window.URL || 
+							 window.webkitURL || 
+							 window.mozURL || 
+							 window.msURL;
+
+
+				if(navigator.getUserMedia){
+					navigator.getUserMedia({
+						video: true
+					},function(stream){
+						options.onSuccess()
+
+						video.src = (window.URL && window.URL.createObjectURL(stream)) || stream;
+
+						initCanvas();
+
+					},options.onError);
+				}else{
+					options.onNotSupported();
+				}
+
+ 			}
+
+ 			function initCanvas(){
+ 				canvas = options.targetCanvas || document.createElement('canvas');
+ 				canvas.setAttribute('width', options.width);
+ 				canvas.setAttribute('height', options.height);
+
+ 				context = canvas.getContext('2d');
+
+ 				// document.body.appendChild(canvas);
+
+ 				if(options.mirror){
+ 					context.translate(canvas.width,0);
+ 					context.scale(-1, 1);
+ 				}
+
+ 				startCapture();
+ 			}
+
+ 			function startCapture(){
+ 				video.play();
+
+ 				timer = setInterval(function(){
+ 					context.drawImage(video, 0, 0, options.width, options.height);
+ 					options.onFrame(canvas);
+ 				},Math.round(1000 / options.fps))
+ 			}
+
+ 			function stopCapture(){
+ 				pauseCapture();
+
+ 				video.src = "";
+ 			}
+
+ 			function pauseCapture(){
+ 				if(timer) {
+ 					clearInterval(timer);
+ 				}
+
+ 				video.pause();
+ 			}
+
+
+			return {
+				init: function(captureOptions){
+					var doNothing = function(){};
+
+					options = captureOptions || {};
+
+					options.fps            = options.fps            || 30;
+					options.width          = options.width          || 640;
+					options.height         = options.height         || 480;
+					options.mirror         = options.mirror         || false;
+					options.targetCanvas   = options.targetCanvas   || null;
+					options.onSuccess 	   = options.onSuccess      || doNothing;
+					options.onError        = options.onError        || doNothing;
+					options.onNotSupported = options.onNotSupported || doNothing;
+					options.onFrame        = options.onFrame        || doNothing;
+
+					initVideoStream();
+				},
+
+				start: startCapture,
+
+				pause: pauseCapture,
+
+				stop: stopCapture
+			};
+		})();
+
+		// manipulateImage = (function(){
+		// 	var options;
+		// 	var canvas;
+		// 	var context = canvas.getContext('2d');
+
+		// 	function 
+		// 	return {
+		// 		fromCanvas: function(canvas,options){
+		// 			canvas = canvas;
+		// 		}
+		// 	}
+		// })();
+
+		camera.init({
+			mirror:false,
+			targetCanvas: document.getElementById('canvas'),
+			onFrame: function(canvas){
+				// console.log(canvas.getImageData(0,0,canvas.width, canvas.height))
+			}
+		});
+	</script>
+</body>
+</html>
